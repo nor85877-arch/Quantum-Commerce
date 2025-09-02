@@ -36,8 +36,14 @@ const Auth = (() => {
 
   document.addEventListener('DOMContentLoaded', () => {
     bindGreeting();
-    // simple header controls if needed
     document.querySelectorAll('[data-logout]').forEach(btn => btn.addEventListener('click', () => { logout(); location.reload(); }));
+    // hamburger toggle
+    const toggle = document.getElementById('nav-toggle');
+    const links  = document.querySelector('.nav-links');
+    toggle?.addEventListener('click', () => {
+      toggle.classList.toggle('open');
+      links.classList.toggle('open');
+    });
   });
 
   return { register, login, logout, me, requireAuth, bindGreeting };
