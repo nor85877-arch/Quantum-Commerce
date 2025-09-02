@@ -130,17 +130,6 @@
 
   document.addEventListener('DOMContentLoaded', init);
 })();
-/* existing code ... */
-function init(){
-  resize();
-  particles = Array.from({length: CONFIG.count}, () => new Particle());
-  collectProductNodes();
-  loop();
-  setRealHeight();            // iOS vh fix
-  window.addEventListener('resize', () => { resize(); collectProductNodes(); setRealHeight(); });
-}
 
-function setRealHeight(){
-  document.documentElement.style.setProperty('--vh', window.innerHeight * 0.01 + 'px');
-}
+
 
