@@ -1,0 +1,74 @@
+/* Glassmorphism Nav */
+.nav{
+  position:sticky; top:16px; z-index:50; width:min(1100px, 92%); margin:0 auto 24px;
+  backdrop-filter: blur(14px) saturate(120%); background:linear-gradient(180deg, rgba(255,255,255,0.08), rgba(255,255,255,0.03));
+  border:1px solid rgba(255,255,255,0.14); border-radius:20px; padding:10px 14px; box-shadow: var(--ring);
+  display:flex; align-items:center; justify-content:space-between; gap:12px;
+}
+.brand{display:flex; align-items:center; gap:12px}
+.brand-logo{
+  width:36px; height:36px; border-radius:12px; background:radial-gradient(60% 60% at 70% 20%, rgba(0,229,255,0.5), transparent 60%), rgba(255,255,255,0.03);
+  border:1px solid rgba(255,255,255,0.18); box-shadow: var(--glow-cyan);
+  display:grid; place-items:center; position:relative; overflow:hidden;
+}
+.brand-logo::after{
+  content:""; position:absolute; inset:-2px; background:var(--grad-border); filter:blur(8px); opacity:0.5; mix-blend:screen; animation:borderSpin 12s linear infinite;
+}
+.brand-title{ font-weight:800; letter-spacing:0.5px}
+
+/* Floating nav links */
+.nav-links{display:flex; gap:10px; align-items:center}
+.nav a{padding:8px 12px; border-radius:999px; color:var(--white)}
+.nav a:hover{background:rgba(255,255,255,0.08)}
+
+/* Cart Icon */
+.cart-cta{position:relative; display:flex; align-items:center; gap:8px; padding:8px 12px; border-radius:999px; background:rgba(0,229,255,0.08); border:1px solid rgba(0,229,255,0.35)}
+.cart-count{
+  position:absolute; top:-6px; right:-6px; width:20px; height:20px; display:grid; place-items:center;
+  background:var(--grad-cyan); color:#011; border-radius:999px; font-size:12px; font-weight:800; box-shadow: var(--glow-cyan)
+}
+
+/* Containers */
+.container{ width:min(1100px, 92%); margin:0 auto; }
+.hero{ display:grid; gap:14px; padding:28px 0 10px; }
+.hero .sub{ color:var(--muted) }
+
+/* Grid */
+.grid{ display:grid; gap:16px }
+.grid.cols-3{ grid-template-columns: repeat(3, minmax(0, 1fr)) }
+.grid.cols-4{ grid-template-columns: repeat(4, minmax(0, 1fr)) }
+@media (max-width: 980px){ .grid.cols-4{grid-template-columns: repeat(3, 1fr)} }
+@media (max-width: 780px){ .grid.cols-3, .grid.cols-4{grid-template-columns: repeat(2, 1fr)} }
+@media (max-width: 520px){ .grid{grid-template-columns: 1fr} }
+
+/* Holographic Product Card */
+.product-card{
+  position:relative; overflow:hidden; border-radius:18px; background: rgba(255,255,255,0.03);
+  border:1px solid rgba(255,255,255,0.12); transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease;
+}
+.product-card::before{
+  content:""; position:absolute; inset:-2px; background: conic-gradient(from 0deg, rgba(0,229,255,0.5), rgba(29,233,182,0.5), rgba(0,229,255,0.5));
+  filter: blur(22px); opacity:0; transition: opacity .35s ease; pointer-events:none;
+}
+.product-card:hover{ transform: translateY(-4px); border-color: rgba(0,229,255,0.35); box-shadow: var(--glow-cyan) }
+.product-card:hover::before{ opacity:0.45 }
+.product-media{ aspect-ratio: 4 / 3; background: #06121a; display:block; width:100%; object-fit: cover; }
+.product-body{ padding:14px }
+.product-meta{ display:flex; justify-content:space-between; align-items:center; gap:10px }
+.price{ color:var(--teal); font-weight:700 }
+.actions{ display:flex; gap:10px; margin-top:8px }
+
+/* Filters */
+.filters{
+  display:grid; gap:12px; grid-template-columns: 1fr 160px 160px; align-items:end; margin:18px 0;
+}
+@media (max-width: 720px){ .filters{ grid-template-columns: 1fr 1fr } }
+
+/* Panels */
+.panel{
+  background:linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.03));
+  border:1px solid rgba(255,255,255,0.12); border-radius:16px; padding:16px; box-shadow: var(--ring);
+}
+
+/* Footer spacer for fixed canvas overlap */
+.spacer{height:60px}

@@ -1,0 +1,21 @@
+@keyframes borderSpin { to { transform: rotate(360deg) } }
+
+@keyframes pulseCart {
+  0%{ transform: scale(1); filter: drop-shadow(0 0 0 rgba(0,229,255,0)) }
+  40%{ transform: scale(1.12); filter: drop-shadow(0 0 22px rgba(0,229,255,0.6)) }
+  100%{ transform: scale(1) }
+}
+.cart-pulse{ animation: pulseCart .8s ease-out }
+
+@keyframes glowSweep {
+  0%{ opacity:0; transform: translateX(-60%) }
+  40%{ opacity:1 }
+  100%{ opacity:0; transform: translateX(160%) }
+}
+.glow-border{
+  position:relative; overflow:hidden; isolation:isolate;
+}
+.glow-border::after{
+  content:""; position:absolute; inset:auto -30% -2px -30%; height:2px; background: var(--grad-cyan); filter: blur(6px);
+  animation: glowSweep 3.6s ease-in-out infinite;
+}
