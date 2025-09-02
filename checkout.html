@@ -85,7 +85,7 @@
   <script src="js/particles.js"></script>
   <script>
     document.addEventListener('DOMContentLoaded', () => {
-      Auth.requireAuth('/auth/login.html');
+      Auth.requireAuth('auth/login.html');
       const list = Cart.read();
       const summary = document.getElementById('summary');
       const grand = document.getElementById('grand');
@@ -116,3 +116,4 @@
 </body>
 
 </html>
+
