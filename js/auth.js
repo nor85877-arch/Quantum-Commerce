@@ -48,3 +48,4 @@ const Auth = (() => {
 
   return { register, login, logout, me, requireAuth, bindGreeting };
 })();
+
