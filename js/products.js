@@ -102,7 +102,7 @@ const QCProducts = (() => {
           </div>
           <small>${p.category} • ⭐ ${p.rating}</small>
           <div class="actions">
-            <a class="button ghost" href="/product-detail.html?id=${encodeURIComponent(p.id)}">View</a>
+            <a class="button ghost" href="product-detail.html?id=${encodeURIComponent(p.id)}">View</a>
             <button class="button" data-add="${p.id}">Add to Cart</button>
           </div>
         </div>
@@ -195,3 +195,4 @@ const QCProducts = (() => {
 
   return { renderCards, renderFeatured, mountFilters, renderDetail, byId };
 })();
+
