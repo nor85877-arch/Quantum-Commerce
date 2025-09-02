@@ -65,7 +65,7 @@
       const fd = new FormData(e.target);
       try{
         Auth.register({ name: fd.get('name'), email: fd.get('email'), password: fd.get('password') });
-        const next = '/index.html';
+        const next = 'index.html';
         window.location.href = next;
       }catch(err){
         alert(err.message);
@@ -75,4 +75,5 @@
 </body>
 
 </html>
+
 
